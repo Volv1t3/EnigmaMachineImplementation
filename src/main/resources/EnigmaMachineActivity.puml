@@ -1,0 +1,52 @@
+@startuml
+
+:EnigmaThroughConsole.main();
+:Print Menu To Screen;
+:Await for User Input;
+repeat
+split
+:Menu Option One( User Input 1 )|
+if (EnigmaThroughConsole.engima != null) then (true)
+    :Encriptado directo
+    con **configuracion actual**;
+else (false)
+    :Registro de
+    **nueva** maquina enigma;
+endif
+
+'Comment: Menu Option Two'
+split again
+:Menu Option Two ( User Input 2 ) |
+if (EnigmaThroughConsole.engima != null) is (true) then
+  :Desencriptado Directo
+  con **configuracion actual**;
+else (false)
+  :Retorno a menu original;
+endif
+
+'Comment: Menu Option Three'
+split again
+:Menu Option Three ( User Input 3 )|
+if (EnigmaThroughConsole.engima != null) is (true) then
+  :Mostrar **configuracion actual**;
+else (false)
+  :Retorno a menu original;
+endif
+'Comment: Menu Option Four'
+split again
+:Menu Option Four ( User Input 4 )|
+if (EnigmaThroughConsole.engima != null) is (true) then
+  :Tomar informacion de usuario
+  para **modificar** configuracion
+  actual;
+else (false)
+  :Retorno a menu original;
+endif
+
+split again
+:Menu Option 5 ( User Input is 5)}
+stop
+end split
+repeat while ( User Input is not 5)
+
+@enduml

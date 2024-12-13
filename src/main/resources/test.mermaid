@@ -1,0 +1,21 @@
+graph LR
+q0((Letra Encriptada Input)) --> |a-z| q1((q1 Right))
+q1 --> |a-z| q2((q2 Middle))
+q2 --> |a-z| q3((q3 Left))
+q3 --> |a-z| q4((q4 Reflector))
+q4 --> |a-z| q3
+q3 --> |a-z| q2
+q2 --> |a-z| q1
+q1 --> |a-z| q5((Letra Igual A PlainText))
+q5 --> |si| q6((Accept State))
+q5 --> |no| q1
+
+%% Rotor stepping transitions
+q1 --> |step| q1
+q1 --> |Notch| q2
+q2 --> |step| q2
+q2 --> |Notch| q3
+q3 --> |step| q3
+
+style q0 fill:#,stroke:#333
+style q4 fill:#,stroke:#333

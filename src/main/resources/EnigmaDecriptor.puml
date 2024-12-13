@@ -1,0 +1,30 @@
+@startuml
+
+:EnigmaDecriptoerRunner().main();
+repeat
+:Ingreso prelimiar (-1 o R para salir o entrar);
+if (Ingreso Preliminar == -1) is (true) then
+  stop
+else ()
+  :Ingreso de Texto y Configuracion;
+  split
+  :Desencriptado Completo No Conoce Nada
+          (Menos Eficiente, Poco Alcance)|
+  'Comment: Menu Option Two'
+  split again
+  :Desencriptado Conociendo Posiciones
+  Iniciales de Rotor y Reflector Usado|
+  'Comment: Menu Option Three'
+  split again
+  :Desencriptado Conociendo Rotores
+  Usados y Reflector Usado|
+  'Comment: Menu Option Four'
+  split again
+  :Desencriptado Conociendo Rotores Usados
+  y Parte del Plaintext|
+  end split
+endif
+repeat while ( User Input is not -1)
+
+
+@enduml
